@@ -13,18 +13,18 @@ namespace SimpleRestApiDAL
         public void InsertCars()
         {
             //ReadStock stockDetail = new ReadStock();
-            try
-            {
-                using (IDbConnection conn = new MySqlConnection(_connString))
-                {
-                    stockDetail = conn.Query<ReadStock>("sp_UsedCarsCreate", stock, commandType: CommandType.StoredProcedure).FirstOrDefault();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return stockDetail;
+            //try
+            //{
+            //    using (IDbConnection conn = new MySqlConnection(_connString))
+            //    {
+            //        stockDetail = conn.Query<ReadStock>("sp_UsedCarsCreate", stock, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
+            //return stockDetail;
         }
     }
 }

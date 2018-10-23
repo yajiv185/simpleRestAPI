@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleRestApiDAL
+namespace SimpleRestApiBL
 {
-    class MakesRepository
+    public class CarsBL
     {
     }
 }

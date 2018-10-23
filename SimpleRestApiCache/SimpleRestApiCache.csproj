@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DF9EBC00-0F3F-4706-88A1-416B5BD4C8F6}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>SimpleRestApiCache</RootNamespace>
     <AssemblyName>SimpleRestApiCache</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,11 +45,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CarsCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellersCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleRestApiDAL\SimpleRestApiDAL.csproj">
+      <Project>{b116b937-8b31-4148-862a-478b22eb21e7}</Project>
+      <Name>SimpleRestApiDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleRestApiEntity\SimpleRestApiEntity.csproj">
+      <Project>{4d27fff8-16c6-4ccb-ba9c-712335e29a41}</Project>
+      <Name>SimpleRestApiEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleRestApiInterfaces\SimpleRestApiInterfaces.csproj">
+      <Project>{c9e72216-1b9e-4272-a325-363758343016}</Project>
+      <Name>SimpleRestApiInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleRestApiDAL
+namespace SimpleRestApiInterfaces.Cars
 {
-    class CitiesRepository
+    public interface ICarsCache
     {
     }
 }
