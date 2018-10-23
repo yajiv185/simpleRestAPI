@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B116B937-8B31-4148-862A-478B22EB21E7}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>SimpleRestApiDAL</RootNamespace>
     <AssemblyName>SimpleRestApiDAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -30,6 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper">
@@ -58,6 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleRestApiEntity\SimpleRestApiEntity.csproj">
+      <Project>{4d27fff8-16c6-4ccb-ba9c-712335e29a41}</Project>
+      <Name>SimpleRestApiEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleRestApiInterfaces\SimpleRestApiInterfaces.csproj">
+      <Project>{c9e72216-1b9e-4272-a325-363758343016}</Project>
+      <Name>SimpleRestApiInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

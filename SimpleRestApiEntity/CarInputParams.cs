@@ -1,8 +1,9 @@
 ﻿using FluentValidation.Attributes;
+using SimpleRestApiEntity.Validators;
 
 namespace SimpleRestApiEntity
 {
-    [Validator(typeof())]
+    [Validator(typeof(CarInputParamsValidator))]
     public class CarInputParams
     {
         public int MakeId { get; set; }

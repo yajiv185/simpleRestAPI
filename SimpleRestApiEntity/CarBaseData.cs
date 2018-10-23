@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SimpleRestApiEntity
+﻿namespace SimpleRestApiEntity
 {
     public class CarBaseData
     {
@@ -12,7 +10,7 @@ namespace SimpleRestApiEntity
         public string Fuel { get; set; }
         public double Price { get; set; }
         public int Km { get; set; }
-        public Int16 Year { get; set; }
+        public int Year { get; set; }
         public int SellerId { get; set; }
         public string SellerName { get; set; }
         public string ContactNo { get; set; }
