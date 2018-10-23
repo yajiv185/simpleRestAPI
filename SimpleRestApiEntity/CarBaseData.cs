@@ -1,4 +1,6 @@
-﻿namespace SimpleRestApiEntity
+﻿using System;
+
+namespace SimpleRestApiEntity
 {
     public class CarBaseData
     {
@@ -19,6 +21,8 @@
         public int CityId { get; set; }
         public string CityName { get; set; }
         public string MakeLogoUrl { get; set; }
-        public string State { get; set; }
+        public string StateName { get; set; }
+        public DateTime InsertionTime { get; set; }
+        public int Pincode { get; set; }
     }
 }

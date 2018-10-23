@@ -60,7 +60,7 @@ namespace SimpleRestApiDAL
         public bool DeleteSellerInfo(int sellerId)
         {
             bool isSuccessfullyDeleted = false;
-            string query = $@"delete Sellers as s
+            string query = $@"delete from Sellers as s
                               where s.id = @v_sellerId;";
             var dbParams = GetDbParamsFromSellerId(sellerId);
             using (var connection = new MySqlConnection(_connString))

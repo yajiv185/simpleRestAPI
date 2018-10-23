@@ -17,6 +17,7 @@ namespace SimpleRestAPIs.Controllers
         }
 
         // POST: api/Sellers
+        [Route("api/sellers")]
         public IHttpActionResult Post([FromBody]SellerInputParams sellerInputParams)
         {
             var lastInsertedId = _sellersBL.InsertSellerInfo(sellerInputParams);
@@ -31,6 +32,7 @@ namespace SimpleRestAPIs.Controllers
         }
 
         // PUT: api/Sellers/5
+        [Route("api/sellers/{sellerId}")]
         public IHttpActionResult Put(int sellerId, [FromBody]SellerInputParams sellerInputParams)
         {
             var isSuccessfullyUpdated = _sellersBL.UpdateSellerInfo(sellerId, sellerInputParams);
@@ -45,6 +47,7 @@ namespace SimpleRestAPIs.Controllers
         }
 
         // DELETE: api/Sellers/5
+        [Route("api/sellers/{sellerId}")]
         public IHttpActionResult Delete(int sellerId)
         {
             var isSuccessfullyDeleted = _sellersBL.DeleteSellerInfo(sellerId);
