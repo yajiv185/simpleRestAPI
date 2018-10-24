@@ -14,10 +14,6 @@ namespace SimpleRestApiEntity
         public int Km { get; set; }
         public int Year { get; set; }
         public int SellerId { get; set; }
-        public string SellerName { get; set; }
-        public string ContactNo { get; set; }
-        public string Email { get; set; }
-        public string SellerAddress { get; set; }
         public int CityId { get; set; }
         public string CityName { get; set; }
         public string MakeLogoUrl { get; set; }

@@ -24,10 +24,10 @@ namespace SimpleRestApiCache
             return _carsRepository.UpdateCarData(carId, carInputParams);
         }
 
-        public bool DeleteCarData(int carId)
+        public void DeleteCarData(int carId)
         {
             //In case of cache server, after updating info to the database, just delete cache key from cache.
-            return _carsRepository.DeleteCarData(carId);
+            _carsRepository.DeleteCarData(carId);
         }
     }
 }

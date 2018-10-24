@@ -24,10 +24,10 @@ namespace SimpleRestApiCache
             return _sellersRepository.UpdateSellerInfo(sellerId, sellerInputParams);
         }
 
-        public bool DeleteSellerInfo(int sellerId)
+        public void DeleteSellerInfo(int sellerId)
         {
             //In case of cache server, after updating info to the database, just delete cache key from cache.
-            return _sellersRepository.DeleteSellerInfo(sellerId);
+            _sellersRepository.DeleteSellerInfo(sellerId);
         }
     }
 }

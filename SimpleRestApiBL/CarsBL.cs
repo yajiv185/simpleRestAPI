@@ -30,10 +30,10 @@ namespace SimpleRestApiBL
             return _carsCache.UpdateCarData(carId, carInputParams);
         }
 
-        public bool DeleteCarData(int carId)
+        public void DeleteCarData(int carId)
         {
             //Calling cache, it will delete cache object from cache and also delete object(row) from database 
-            return _carsCache.DeleteCarData(carId);
+            _carsCache.DeleteCarData(carId);
         }
     }
 }

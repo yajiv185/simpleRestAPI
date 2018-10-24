@@ -47,7 +47,7 @@ namespace SimpleRestApiDAL
                                   s.contactNumber = ifnull(@v_contactNumber, s.contactNumber),
                                   s.email = ifnull(@v_email, s.email),
                                   s.address = ifnull(@v_address, s.address),
-                                  s.cityId = ifnull(@v_cityId, s.cityId)
+                                  s.cityId = if(@v_cityId = 0, s.cityId, @v_cityId)
                               where s.id = @v_sellerId;";
             var dbParams = GetDbParamsFromSellerInputParams(sellerId, sellerInputParams);
             using (var connection = new MySqlConnection(_connString))
@@ -57,17 +57,15 @@ namespace SimpleRestApiDAL
             return isSuccessfullyUpdated;
         }
 
-        public bool DeleteSellerInfo(int sellerId)
+        public void DeleteSellerInfo(int sellerId)
         {
-            bool isSuccessfullyDeleted = false;
             string query = $@"delete from Sellers as s
                               where s.id = @v_sellerId;";
             var dbParams = GetDbParamsFromSellerId(sellerId);
             using (var connection = new MySqlConnection(_connString))
             {
-                isSuccessfullyDeleted = connection.Execute(query, dbParams, commandType: CommandType.Text) > 0;
+                connection.Execute(query, dbParams, commandType: CommandType.Text);
             }
-            return isSuccessfullyDeleted;
         }
 
         private object GetDbParamsFromSellerInputParams(int sellerId, SellerInputParams sellerInputParams)

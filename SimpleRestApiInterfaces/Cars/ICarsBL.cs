@@ -7,6 +7,6 @@ namespace SimpleRestApiInterfaces.Cars
         CarBaseData GetCarData(int carId);
         int? InsertCarData(CarInputParams carInputParams);
         bool UpdateCarData(int carId, CarInputParams carInputParams);
-        bool DeleteCarData(int carId);
+        void DeleteCarData(int carId);
     }
 }

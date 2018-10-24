@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CommonMethods.cs" />
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\SellersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -131,6 +132,10 @@
     <ProjectReference Include="..\SimpleRestApiInterfaces\SimpleRestApiInterfaces.csproj">
       <Project>{c9e72216-1b9e-4272-a325-363758343016}</Project>
       <Name>SimpleRestApiInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleRestApiUtility\SimpleRestApiUtility.csproj">
+      <Project>{a1b77100-3846-4d22-ac9e-42bc5ee311c4}</Project>
+      <Name>SimpleRestApiUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

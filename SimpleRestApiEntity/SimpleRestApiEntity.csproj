@@ -86,6 +86,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleRestApiUtility\SimpleRestApiUtility.csproj">
+      <Project>{a1b77100-3846-4d22-ac9e-42bc5ee311c4}</Project>
+      <Name>SimpleRestApiUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

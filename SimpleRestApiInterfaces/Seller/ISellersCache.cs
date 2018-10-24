@@ -6,6 +6,6 @@ namespace SimpleRestApiInterfaces.Seller
     {
         SellerInfo GetSellerInfo(int sellerId);
         bool UpdateSellerInfo(int sellerId, SellerInputParams sellerInputParams);
-        bool DeleteSellerInfo(int sellerId);
+        void DeleteSellerInfo(int sellerId);
     }
 }

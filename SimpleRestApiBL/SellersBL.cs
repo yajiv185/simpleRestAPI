@@ -30,10 +30,10 @@ namespace SimpleRestApiBL
             return _sellersCache.UpdateSellerInfo(sellerId, sellerInputParams);
         }
 
-        public bool DeleteSellerInfo(int sellerId)
+        public void DeleteSellerInfo(int sellerId)
         {
             //Calling cache, it will delete cache object from cache and also delete object(row) from database 
-            return _sellersCache.DeleteSellerInfo(sellerId);
+            _sellersCache.DeleteSellerInfo(sellerId);
         }
     }
 }

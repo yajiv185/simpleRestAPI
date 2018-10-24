@@ -50,13 +50,13 @@ namespace SimpleRestApiDAL
         {
             bool isSuccessfullyUpdated = false;
             string query = $@"update Cars as c
-                              set c.makeId = ifnull(@v_makeId, c.makeId),
-                                  c.modelId = ifnull(@v_modelId, c.modelId),
+                              set c.makeId = if(@v_makeId = 0, c.makeId, @v_makeId),
+                                  c.modelId = if(@v_modelId = 0, c.modelId, @v_modelId),
                                   c.fuel = ifnull(@v_fuel, c.fuel),
-                                  c.price = ifnull(@v_price, c.price),
-                                  c.km = ifnull(@v_km, c.km),
-                                  c.year = ifnull(@v_year, c.year),
-                                  c.sellerId = ifnull(@v_sellerId, c.sellerId),
+                                  c.price = if(@v_price = 0, c.price, @v_price),
+                                  c.km = if(@v_km = 0, c.km, @v_km),
+                                  c.year = if(@v_year = 0, c.year, @v_year),
+                                  c.sellerId = if(@v_sellerId = 0, c.sellerId, @v_sellerId),
                               where c.id = @v_carId;";
             var dbParams = GetDbParamsFromCarInputParams(carId, carInputParams);
             using (var connection = new MySqlConnection(_connString))
@@ -66,17 +66,15 @@ namespace SimpleRestApiDAL
             return isSuccessfullyUpdated;
         }
 
-        public bool DeleteCarData(int carId)
+        public void DeleteCarData(int carId)
         {
-            bool isSuccessfullyDeleted = false;
             string query = $@"delete from Cars as c
                               where c.id = @v_carId;";
             var dbParams = GetDbParamsFromCarId(carId);
             using (var connection = new MySqlConnection(_connString))
             {
-                isSuccessfullyDeleted = connection.Execute(query, dbParams, commandType: CommandType.Text) > 0;
+                connection.Execute(query, dbParams, commandType: CommandType.Text);
             }
-            return isSuccessfullyDeleted;
         }
 
         private object GetDbParamsFromCarInputParams(int carId, CarInputParams carInputParams)
